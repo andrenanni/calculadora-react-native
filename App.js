@@ -1,10 +1,19 @@
-import {View} from 'react-native';
+import { SafeAreaView, Text, StyleSheet} from "react-native";
+import Botao from "./src/components/botao";
 
-import Calculadora from './components/Calculadora';
-export default function App(){
+export default props => {
   return (
-    <View>
-      <Calculadora/>
-    </View>
+    <SafeAreaView style={estilos.container}>
+      <Botao />
+    </SafeAreaView>
   )
 }
+
+const estilos = StyleSheet.create({
+  container:{
+    flex: 1,
+    backgroundColor: "#f5fcff",
+    justifyContent: "center",
+    alignItems: "center",
+  }
+});
