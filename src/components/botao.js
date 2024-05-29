@@ -5,23 +5,21 @@ const { width, height } = Dimensions.get("window");
 export default props => {
 
     const estilosBotao = [estilos.botao];
-    if(props.duplo){
+    if (props.duplo) {
         estilosBotao.push(estilos.botaoDuplo)
     }
-    if(props.triplo){
+    if (props.triplo) {
         estilosBotao.push(estilos.botaoTriplo)
     }
 
-    if(props.orange){
+    if (props.orange) {
         estilosBotao.push(estilos.color)
     }
-  
 
     return (
-        <TouchableHighlight>
-            <Text style={estilosBotao}>
-                {props.label}
-            </Text>
+        <TouchableHighlight
+            onPress={() => props.onClick(props.label)}>
+            <Text style={estilosBotao}>{props.label}</Text>
         </TouchableHighlight>
     )
 }
@@ -43,7 +41,7 @@ const estilos = StyleSheet.create({
     botaoTriplo: {
         width: width / 4 * 3
     },
-    color:{
+    color: {
         backgroundColor: "#ff4700"
     }
 })
